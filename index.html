@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wilson's Pizzaria Taquaritinga | A pizza mais RECHEADA da região</title>
+  <meta name="description" content="Wilson's Pizzaria em Taquaritinga-SP. Pizzas recheadas, drinks, mesas externas. Faça seu pedido pelo cardápio digital — entrega ou retirada.">
+  <meta name="theme-color" content="#B0140C">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Wilson's Pizzaria">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <link rel="icon" href="assets/imagens/logo-nova.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/imagens/logo-nova.png">
+
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="Wilson's Pizzaria Taquaritinga">
+  <meta property="og:description" content="A pizza mais RECHEADA da região. Pizzas, drinks, mesas externas.">
+  <meta property="og:image" content="assets/imagens/logo-nova.png">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Wilson's Pizzaria",
+    "image": "assets/imagens/logo-nova.png",
+    "telephone": "+551632533541",
+    "priceRange": "$$",
+    "servesCuisine": ["Pizza", "Italiana", "Lanches"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Caetano Decaro, 551",
+      "addressLocality": "Taquaritinga",
+      "addressRegion": "SP",
+      "postalCode": "15900-000",
+      "addressCountry": "BR"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "1009"
+    },
+    "openingHoursSpecification": [
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"17:30","closes":"23:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"17:30","closes":"23:30"}
+    ],
+    "sameAs": ["https://www.instagram.com/wilsonpizzastq"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,700;1,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#cardapio">Ir para o cardápio</a>
+  <div class="app-container">
+
+    <header class="header" id="header">
+      <div class="container header-inner">
+        <a class="brand" href="#inicio" aria-label="Wilson's Pizzaria">
+          <img src="assets/imagens/logo-nova.png" alt="Wilson's Pizzaria" class="brand-logo">
+          <span class="brand-name">Wilson's<br><em>Pizzaria</em></span>
+        </a>
+
+        <nav class="nav" id="nav">
+          <a href="#inicio" data-section="inicio">Início</a>
+          <a href="#destaques" data-section="destaques">Destaques</a>
+          <a href="#promocoes" data-section="promocoes" id="navPromocoes" hidden>🔥 Promoções</a>
+          <a href="#cardapio" data-section="cardapio">Cardápio</a>
+          <a href="#sobre" data-section="sobre">A Pizzaria</a>
+          <a href="#contato" data-section="contato">Contato</a>
+        </nav>
+
+        <div class="header-actions">
+          <span class="open-status" id="openStatus" hidden>
+            <span class="open-status-dot" aria-hidden="true"></span>
+            <span class="open-status-text"></span>
+          </span>
+          <a class="btn btn-primary" href="#cardapio">Fazer Pedido</a>
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="promo-bar" id="promoBar" style="display:none;"></div>
+
+      <!-- HERO -->
+      <section class="hero" id="inicio">
+        <div class="hero-bg-shape"></div>
+        <div class="container hero-grid">
+          <div class="hero-content reveal">
+
+            <div class="hero-rating">
+              <span class="hero-rating-dot"></span>
+              <span class="hero-rating-stars">★★★★★</span>
+              <strong class="hero-rating-score">4,8</strong>
+              <span class="hero-rating-sep">·</span>
+              <span class="hero-rating-count">1.009 avaliações</span>
+              <span class="hero-rating-badge">Google</span>
+            </div>
+
+            <div class="hero-location">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <span>Taquaritinga · SP</span>
+            </div>
+
+            <h1><span class="h1-line">A pizza mais</span><span class="h1-mega text-yellow">RECHEADA</span><span class="h1-line h1-line-end">da região<em>.</em></span></h1>
+
+            <p class="hero-lead">Pizza farta, drink caprichado e ambiente pra colocar o papo em dia — cada pedido do jeito que você quer.</p>
+
+            <div class="hero-buttons">
+              <a class="btn btn-primary btn-large" href="#cardapio">
+                <span>Ver Cardápio</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <a class="btn btn-wpp btn-large" href="https://wa.me/5516997384914" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15s-.77.97-.94 1.16c-.17.2-.35.22-.64.08-1.63-.82-3.13-1.9-4.26-3.1-.96-1.02-1.6-2.22-1.89-3.07-.05-.22.1-.37.28-.54.16-.16.37-.43.46-.65.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12 1.01-.16 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                <span>WhatsApp</span>
+              </a>
+            </div>
+
+            <div class="hero-chips">
+              <span class="hero-chip">⏱️ ~30 minutos</span>
+              <span class="hero-chip">📅 Seg–Sáb · 17h30</span>
+            </div>
+
+          </div>
+          <div class="hero-image reveal reveal-delay">
+            <div class="image-showcase">
+              <img src="assets/imagens/hero.webp" alt="Pizza recheada" loading="eager">
+              <div class="floating-card floating-card-tr">
+                <div class="floating-stat">
+                  <span class="floating-stat-label">Pizza Grande</span>
+                  <strong class="floating-stat-value">a partir de<br><em>R$ 79,90</em></strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#promocoes" class="hero-scroll" aria-label="Rolar para promoções">
+          <span class="hero-scroll-text">Promoções da semana</span>
+          <span class="hero-scroll-arrow" aria-hidden="true">↓</span>
+        </a>
+      </section>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>🍕 A pizza mais RECHEADA da região</span><span>★</span>
+          <span>🥤 Sucos naturais feitos na hora</span><span>★</span>
+          <span>🍹 Drinks autorais e cervejas geladas</span><span>★</span>
+          <span>🪑 Mesas externas para o papo bom</span><span>★</span>
+          <span>🚚 Entrega em Taquaritinga</span><span>★</span>
+          <span>🍕 A pizza mais RECHEADA da região</span><span>★</span>
+          <span>🥤 Sucos naturais feitos na hora</span><span>★</span>
+          <span>🍹 Drinks autorais e cervejas geladas</span><span>★</span>
+          <span>🪑 Mesas externas para o papo bom</span><span>★</span>
+          <span>🚚 Entrega em Taquaritinga</span><span>★</span>
+        </div>
+      </div>
+
+      <!-- NOSSOS PRATOS -->
+      <section class="sc-section" id="destaques">
+        <div class="container">
+          <div class="sc-header reveal">
+            <span class="sc-eyebrow">Cardápio em Destaque</span>
+            <h2 class="sc-title">O que a cozinha<br>preparou pra você.</h2>
+            <p class="sc-desc">Do petisco à pizza — os pratos que mais saem na Wilson's.</p>
+          </div>
+          <div class="sc-grid reveal">
+
+            <a href="#cardapio" onclick="window.goToTab('Pizzas Doces')" class="sc-card sc-card--hero">
+              <img src="assets/imagens/pizza-broto-doce.webp" alt="Pizza Broto Doce" loading="lazy">
+              <div class="sc-overlay">
+                <div class="sc-card-top"><span class="sc-tag">🍕 Pizzas Doces</span></div>
+                <div class="sc-card-bottom">
+                  <strong class="sc-name">Pizza Broto Doce</strong>
+                  <span class="sc-cta">Ver no cardápio →</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="#cardapio" onclick="window.goToTab('Porções')" class="sc-card">
+              <img src="assets/imagens/porcao-picanha.webp" alt="Porção de Picanha" loading="lazy">
+              <div class="sc-overlay">
+                <div class="sc-card-top"><span class="sc-tag">🥩 Porções</span></div>
+                <div class="sc-card-bottom">
+                  <strong class="sc-name">Porção de Picanha</strong>
+                  <span class="sc-cta">Ver no cardápio →</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="#cardapio" onclick="window.goToTab('Drinks')" class="sc-card">
+              <img src="assets/imagens/drink-caipirinha.webp" alt="Caipirinha" loading="lazy">
+              <div class="sc-overlay">
+                <div class="sc-card-top"><span class="sc-tag">🍹 Drinks</span></div>
+                <div class="sc-card-bottom">
+                  <strong class="sc-name">Caipirinha</strong>
+                  <span class="sc-cta">Ver no cardápio →</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="#cardapio" onclick="window.goToTab('Porções')" class="sc-card sc-card--wide">
+              <img src="assets/imagens/escondidinho.webp" alt="Escondidinho" loading="lazy">
+              <div class="sc-overlay">
+                <div class="sc-card-top"><span class="sc-tag">🍲 Porções</span></div>
+                <div class="sc-card-bottom">
+                  <strong class="sc-name">Escondidinho</strong>
+                  <span class="sc-cta">Ver no cardápio →</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="#cardapio" onclick="window.goToTab('Lanches')" class="sc-card sc-card--wide">
+              <img src="assets/imagens/lanche-x-file.webp" alt="X-File" loading="lazy">
+              <div class="sc-overlay">
+                <div class="sc-card-top"><span class="sc-tag">🍔 Lanches</span></div>
+                <div class="sc-card-bottom">
+                  <strong class="sc-name">X-File</strong>
+                  <span class="sc-cta">Ver no cardápio →</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="#cardapio" onclick="window.goToTab('Porções')" class="sc-card sc-card--wide">
+              <img src="assets/imagens/arroz-de-forno.webp" alt="Arroz de Forno" loading="lazy">
+              <div class="sc-overlay">
+                <div class="sc-card-top"><span class="sc-tag">🍳 Porções</span></div>
+                <div class="sc-card-bottom">
+                  <strong class="sc-name">Arroz de Forno</strong>
+                  <span class="sc-cta">Ver no cardápio →</span>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- COMO PEDIR -->
+      <section class="how-section section bg-light" id="como-pedir">
+        <div class="container">
+          <div class="section-header reveal text-center">
+            <span class="subtitle">É simples assim</span>
+            <h2>Como fazer seu pedido</h2>
+            <p>Pelo site ou pelo WhatsApp — rápido, fácil e sem complicação.</p>
+          </div>
+          <div class="how-steps reveal">
+
+            <div class="how-step">
+              <div class="how-num">01</div>
+              <div class="how-icon">🍕</div>
+              <h3>Escolhe</h3>
+              <p>Navega pelo cardápio, encontra seu favorito e monta como quiser — broto, grande, meio a meio.</p>
+              <a href="#cardapio" class="how-link">Ver cardápio →</a>
+            </div>
+
+            <div class="how-arrow" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
+
+            <div class="how-step">
+              <div class="how-num">02</div>
+              <div class="how-icon">🛒</div>
+              <h3>Monta</h3>
+              <p>Adiciona ao carrinho, escolhe entrega ou retirada no balcão e informa pagamento. Tudo no site.</p>
+            </div>
+
+            <div class="how-arrow" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
+
+            <div class="how-step">
+              <div class="how-num">03</div>
+              <div class="how-icon">🚀</div>
+              <h3>Recebe</h3>
+              <p>Confirmação pelo WhatsApp e entrega em ~30 minutos. Ou retire grátis no balcão.</p>
+              <a href="https://wa.me/5516997384914" target="_blank" rel="noopener" class="how-link how-link--wpp">WhatsApp →</a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- PROMOÇÕES -->
+      <section class="promo-section section" id="promocoes" hidden>
+        <div class="container">
+          <div class="section-header reveal text-center">
+            <span class="subtitle">🔥 Ofertas da Casa</span>
+            <h2>Promoções</h2>
+            <p>Pizzas selecionadas com desconto especial. Aproveita!</p>
+          </div>
+          <div class="promo-grid reveal" id="promoGrid"></div>
+        </div>
+      </section>
+
+      <!-- CARDÁPIO -->
+      <section class="menu section" id="cardapio">
+        <div class="container">
+          <div class="section-header reveal text-center">
+            <span class="subtitle">Cardápio Digital</span>
+            <h2>Faça seu Pedido</h2>
+            <p>Mais de 500 itens. Escolha, monte (meio a meio nas pizzas) e adicione ao carrinho.</p>
+          </div>
+          <div class="menu-tabs reveal" id="menuTabs"></div>
+          <div class="menu-panels" id="menuPanels"></div>
+        </div>
+      </section>
+
+      <!-- SOBRE -->
+      <section class="about section" id="sobre">
+        <div class="container">
+          <div class="about-grid">
+
+            <div class="about-content reveal">
+              <span class="subtitle">Nossa História</span>
+              <h2>Feita com recheio.<br><span class="text-highlight">Servida com afeto.</span></h2>
+              <p class="about-lead">A Wilson's virou ponto de encontro em Taquaritinga porque acredita numa coisa simples: pizza tem que ser <strong>farta</strong>, drink tem que ser <strong>caprichado</strong> e o ambiente tem que ser <strong>seu</strong>.</p>
+              <p>Massa fina, ingredientes generosos, mais de 60 sabores. Drinks autorais, cervejas geladas e sucos feitos na hora. Mesas externas pra o papo ir longe.</p>
+
+              <div class="about-feats">
+                <a href="#cardapio" onclick="window.goToTab('Pizzas Salgadas')" class="about-feat about-feat--link">
+                  <span class="about-feat-icon">🍕</span>
+                  <div><strong>+60 sabores de pizza</strong><span>Grandes, brotos e versões doces</span></div>
+                  <svg class="about-feat-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a href="#cardapio" onclick="window.goToTab('Drinks')" class="about-feat about-feat--link">
+                  <span class="about-feat-icon">🍹</span>
+                  <div><strong>Drinks autorais</strong><span>Caipirinhas, doses, vinhos e cervejas</span></div>
+                  <svg class="about-feat-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <div class="about-feat">
+                  <span class="about-feat-icon">🪑</span>
+                  <div><strong>Mesas externas</strong><span>Ambiente aberto e descontraído</span></div>
+                </div>
+                <a href="#cardapio" onclick="window.goToTab('Bebidas')" class="about-feat about-feat--link">
+                  <span class="about-feat-icon">🥤</span>
+                  <div><strong>Sucos naturais</strong><span>Feitos na hora, sem artificial</span></div>
+                  <svg class="about-feat-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="about-visual reveal reveal-delay">
+              <div class="about-photo-slot">
+                <img src="assets/imagens/salao.webp" alt="Salão Wilson's Pizzaria" class="about-photo" loading="lazy" onerror="this.closest('.about-photo-slot').hidden=true">
+              </div>
+              <div class="about-manifesto">
+                <div class="about-stats">
+                  <div class="about-stat">
+                    <strong class="about-stat-num">+60</strong>
+                    <span class="about-stat-label">sabores</span>
+                  </div>
+                  <div class="about-stat-div"></div>
+                  <div class="about-stat">
+                    <strong class="about-stat-num">4,8</strong>
+                    <span class="about-stat-label">★ Google</span>
+                  </div>
+                  <div class="about-stat-div"></div>
+                  <div class="about-stat">
+                    <strong class="about-stat-num">1009</strong>
+                    <span class="about-stat-label">avaliações</span>
+                  </div>
+                </div>
+
+                <blockquote class="about-quote">
+                  <span class="about-quote-mark">"</span>
+                  <p>A melhor pizza de Taquaritinga, sem discussão. Recheio generoso, massa crocante e atendimento acolhedor.</p>
+                  <cite>— Cliente verificado no Google</cite>
+                </blockquote>
+
+                <div class="about-address-tag">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>Av. Caetano Decaro, 551 · Taquaritinga–SP</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTATO -->
+      <section class="contact section" id="contato">
+        <div class="container">
+          <div class="contact-box reveal">
+            <div class="contact-info">
+              <h2>Visite ou Peça em Casa</h2>
+              <p id="contact-address">Av. Caetano Decaro, 551 - Laranjeiras<br>Taquaritinga - SP, 15900-000</p>
+
+              <div class="contact-hours">
+                <strong>Horário de Funcionamento:</strong>
+                <span id="contact-hours">
+                  <span class="hours-line"><strong>Seg a Sex:</strong> 17h30 às 23h00</span><br>
+                  <span class="hours-line"><strong>Sábado:</strong> 17h30 às 23h30</span><br>
+                  <span class="hours-line"><strong>Domingo:</strong> Fechado</span>
+                </span>
+              </div>
+
+              <a href="tel:+551632533541" id="contact-phone" class="contact-phone-link">(16) 3253-3541</a>
+              <p style="margin-top:6px;font-size:.95rem;color:var(--text-gray);">Segunda linha: <a href="tel:+551632536523" style="font-weight:600;color:var(--primary);">(16) 3253-6523</a></p>
+
+              <div class="contact-social-links">
+                <a href="https://wa.me/5516997384914" target="_blank" rel="noopener" class="btn btn-primary btn-large" id="contact-whatsapp-link">WhatsApp (16) 99738-4914</a>
+                <a href="https://www.instagram.com/wilsonpizzastq" id="contact-instagram-link" target="_blank" rel="noopener" class="btn btn-secondary">@wilsonpizzastq</a>
+                <a href="https://www.google.com/maps?q=Wilson%27s+Pizzaria+Taquaritinga" id="contact-maps-link" target="_blank" rel="noopener" class="btn btn-secondary">Google Maps</a>
+              </div>
+            </div>
+            <div class="contact-map" id="contactMap">
+              <iframe title="Mapa Wilson's Pizzaria" loading="lazy" src="https://www.google.com/maps?q=Wilson%27s+Pizzaria+Taquaritinga&output=embed"></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-col footer-col-brand">
+          <img src="assets/imagens/logo-nova.png" alt="Wilson's Pizzaria" class="footer-logo">
+          <p class="footer-tagline">A pizza mais <span>RECHEADA</span> da região.</p>
+          <div class="footer-rating">
+            <span class="footer-stars">★★★★★</span>
+            <span><strong>4,8</strong> · 1.009 avaliações no Google</span>
+          </div>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/wilsonpizzastq" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.facebook.com/wilsonspizzastaquaritinga" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/></svg>
+            </a>
+            <a href="https://wa.me/5516997384914" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15s-.77.97-.94 1.16c-.17.2-.35.22-.64.08-1.63-.82-3.13-1.9-4.26-3.1-.96-1.02-1.6-2.22-1.89-2.06-.05-.22.1-.37.28-.54.16-.16.37-.43.46-.65.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12 1.01-.16 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Cardápio</h4>
+          <ul class="footer-link-list">
+            <li><a href="#cardapio" onclick="window.goToTab('Pizzas Salgadas')">Pizzas Recheadas</a></li>
+            <li><a href="#cardapio" onclick="window.goToTab('Drinks')">Drinks & Bar</a></li>
+            <li><a href="#cardapio" onclick="window.goToTab('Bebidas')">Sucos Naturais</a></li>
+            <li><a href="#promocoes">🔥 Promoções</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Funcionamento</h4>
+          <ul class="footer-hours-list">
+            <li><span>Seg–Sex</span><strong>17h30 — 23h00</strong></li>
+            <li><span>Sábado</span><strong>17h30 — 23h30</strong></li>
+            <li class="closed"><span>Domingo</span><strong>Fechado</strong></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Visite</h4>
+          <address class="footer-address">
+            Av. Caetano Decaro, 551<br>
+            Laranjeiras<br>
+            Taquaritinga — SP
+          </address>
+          <a href="tel:+551632533541" class="footer-phone">📞 (16) 3253-3541</a>
+          <a href="https://wa.me/5516997384914" target="_blank" rel="noopener" class="footer-wpp-btn">
+            WhatsApp (16) 99738-4914
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p class="footer-dev">© 2026 Wilson's Pizzaria LTDA · CNPJ 38.412.308/0001-17</p>
+          <p class="footer-dev footer-made">Feito com 🍕 em Taquaritinga</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- WHATSAPP FLUTUANTE -->
+  <a href="https://wa.me/5516997384914" class="float-wpp" id="floatWpp" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" width="32" height="32" fill="currentColor">
+      <path d="M16.11 0C7.26 0 .06 7.2 .06 16.05c0 2.82.74 5.56 2.14 8L.15 31.85l7.98-2.09c2.39 1.28 5.09 1.95 7.97 1.95 8.84 0 16.05-7.2 16.05-16.05S24.95 0 16.11 0zm0 29.07c-2.4 0-4.75-.64-6.81-1.86l-.49-.29-5.06 1.33 1.35-4.94-.32-.5A13.1 13.1 0 0 1 2.7 16.05C2.7 8.66 8.71 2.65 16.11 2.65S29.51 8.66 29.51 16.05 23.51 29.07 16.11 29.07zm7.38-10.02c-.4-.2-2.39-1.18-2.76-1.32-.37-.13-.64-.2-.91.2-.27.4-.99 1.32-1.22 1.59-.22.27-.45.3-.85.1-1.63-.82-3.13-1.89-4.26-3.1-.96-1.02-1.6-2.22-1.89-3.47-.05-.22.1-.37.28-.54.16-.16.37-.43.56-.65.18-.21.24-.36.36-.6.12-.24.06-.45-.04-.65-.1-.2-1.01-2.43-1.38-3.32-.36-.88-.72-.76-.98-.77h-.84c-.28 0-.74.1-1.13.52-.4.43-1.5 1.47-1.5 3.58 0 2.11 1.54 4.15 1.76 4.45.21.29 3.03 4.63 7.34 6.49.95.41 1.95.73 2.97.94 1.09.22 2.1.18 2.89.06 1.01-.15 2.39-.98 2.72-1.92.34-.94.34-1.74.24-1.92-.1-.18-.37-.28-.77-.48z"/>
+    </svg>
+  </a>
+
+  <!-- MODAL DE PRODUTO -->
+  <div class="modal-overlay" id="pizzaModal">
+    <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="modalPizzaName">
+      <button class="btn-close" id="closeModal" aria-label="Fechar">✕</button>
+      <div class="modal-header-info">
+        <h3 id="modalPizzaName">Nome do produto</h3>
+        <p id="modalPizzaDesc">Descrição.</p>
+      </div>
+      <div class="modal-content-scroll">
+        <div class="modal-form">
+          <div class="form-group" id="pizzaSizeWrapper">
+            <label class="form-label" for="pizzaSize">Escolha o Tamanho</label>
+            <div class="select-wrapper">
+              <select id="pizzaSize">
+                <option value="P">Broto</option>
+                <option value="G" selected>Grande</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group" id="flavorSplitWrapper" style="display:none;">
+            <label class="form-label" id="flavorSplitLabel">Dividir sabores</label>
+            <div id="flavorPartsList" class="flavor-parts-list"></div>
+            <button type="button" class="btn-add-part" id="addFlavorPart">+ Adicionar parte</button>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="pizzaNotes">Alguma observação?</label>
+            <textarea id="pizzaNotes" placeholder="Ex: Sem cebola, borda recheada..."></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <div class="price-display">
+          <span>Total</span>
+          <strong id="modalPrice">R$ 0,00</strong>
+        </div>
+        <button class="btn btn-primary btn-add" id="addToCartBtn">Adicionar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL CARRINHO (3 ETAPAS) -->
+  <div class="modal-overlay" id="cartModal">
+    <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="cartModalTitle">
+      <button class="btn-close" id="closeCartModal" aria-label="Fechar">✕</button>
+      <div class="cart-stepper" id="cartStepper" aria-label="Etapas do pedido">
+        <div class="cart-step active" data-step="1"><span class="cart-step-num"><span class="step-n">1</span></span><span class="cart-step-label">Itens</span></div>
+        <div class="cart-step-line"></div>
+        <div class="cart-step" data-step="2"><span class="cart-step-num"><span class="step-n">2</span></span><span class="cart-step-label">Entrega</span></div>
+        <div class="cart-step-line"></div>
+        <div class="cart-step" data-step="3"><span class="cart-step-num"><span class="step-n">3</span></span><span class="cart-step-label">Pagamento</span></div>
+      </div>
+      <div class="modal-header-info"><h3 id="cartModalTitle">Seu Pedido</h3></div>
+      <div class="modal-content-scroll">
+        <div class="cart-step-panel" data-panel="1">
+          <div class="cart-closed-warning" id="cartClosedWarning" hidden>
+            <strong>⚠️ Estamos fechados agora</strong>
+            <span>Você ainda pode enviar o pedido — vamos confirmar quando reabrir.</span>
+          </div>
+          <div id="cartItemsList" class="cart-items-list"></div>
+          <div class="cart-step-summary"><span>Subtotal</span><strong id="step1Subtotal">R$ 0,00</strong></div>
+        </div>
+        <div class="cart-step-panel" data-panel="2" hidden>
+          <div class="delivery-options">
+            <label class="delivery-card">
+              <input type="radio" name="deliveryOption" value="delivery" checked>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="1"/><circle cx="12" cy="21" r="1"/><circle cx="20" cy="21" r="1"/></svg>
+              <div class="delivery-card-content"><strong>Entregar no meu endereço</strong><span>Taxa: R$ 10,00</span></div>
+            </label>
+            <label class="delivery-card">
+              <input type="radio" name="deliveryOption" value="pickup">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <div class="delivery-card-content"><strong>Retirar no Balcão</strong><span>Grátis <span class="savings-badge">Economize R$ 10,00</span></span></div>
+            </label>
+          </div>
+          <div class="checkout-form" id="checkoutForm">
+            <div class="form-group">
+              <label class="form-label" for="customerName">Seu Nome</label>
+              <input type="text" id="customerName" placeholder="Ex: João da Silva" required autocomplete="name">
+              <small class="error-msg" id="customerNameError" hidden></small>
+            </div>
+            <div id="deliveryFields">
+              <div class="form-group">
+                <label class="form-label" for="customerCep">CEP</label>
+                <input type="text" id="customerCep" placeholder="00000-000" maxlength="9" autocomplete="postal-code" inputmode="numeric">
+                <small class="error-msg" id="customerCepError" hidden></small>
+                <small class="cep-loading-msg" id="customerCepLoading" hidden>Buscando endereço...</small>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="customerAddress">Rua e Número</label>
+                <input type="text" id="customerAddress" placeholder="Ex: Rua das Flores, 123" autocomplete="address-line1">
+                <small class="error-msg" id="customerAddressError" hidden></small>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="customerNeighborhood">Bairro</label>
+                <input type="text" id="customerNeighborhood" placeholder="Ex: Centro" autocomplete="address-level3">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="customerComplement">Complemento <span class="form-label-optional">(opcional)</span></label>
+                <input type="text" id="customerComplement" placeholder="Ex: Apto 12, próximo ao mercado" autocomplete="address-line2">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cart-step-panel" data-panel="3" hidden>
+          <p class="form-label" style="margin-bottom:12px;">Forma de Pagamento</p>
+          <div class="payment-cards" role="radiogroup" aria-label="Forma de pagamento">
+            <label class="payment-card recommended">
+              <input type="radio" name="paymentMethod" value="PIX" checked>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.9 2a9.9 9.9 0 1 0 0 19.8A9.9 9.9 0 0 0 11.9 2zm-1.3 5.5 1.3-1.3 1.3 1.3-1.3 1.3zm3.9 3.9-1.3 1.3-1.3-1.3 1.3-1.3zM8 11.4l1.3-1.3 1.3 1.3-1.3 1.3zm3.9 3.9-1.3 1.3-1.3-1.3 1.3-1.3zm-3.9 0L6.7 14l1.3-1.3L9.3 14zm7.8-3.9-1.3 1.3-1.3-1.3 1.3-1.3z"/></svg>
+              <span>PIX</span>
+            </label>
+            <label class="payment-card">
+              <input type="radio" name="paymentMethod" value="Cartão de Crédito">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              <span>Crédito</span>
+            </label>
+            <label class="payment-card">
+              <input type="radio" name="paymentMethod" value="Cartão de Débito">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              <span>Débito</span>
+            </label>
+            <label class="payment-card">
+              <input type="radio" name="paymentMethod" value="Dinheiro">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M5 4v2M19 4v2M5 18v2M19 18v2"/></svg>
+              <span>Dinheiro</span>
+            </label>
+          </div>
+          <div class="form-group" id="changeWrapper" style="display:none;">
+            <label class="form-label" for="cashChange">Troco para quanto?</label>
+            <input type="text" id="cashChange" placeholder="Ex: 100,00" inputmode="decimal">
+            <small class="change-result" id="changeResult" hidden></small>
+          </div>
+          <div class="order-summary-box">
+            <div class="summary-line"><span>Subtotal</span><strong id="cartSubtotalValue">R$ 0,00</strong></div>
+            <div class="summary-line"><span>Taxa de Entrega</span><strong id="cartFeeValue">R$ 10,00</strong></div>
+            <div class="summary-total"><span>Total a Pagar</span><strong id="cartFinalTotal">R$ 0,00</strong></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-actions cart-nav">
+        <button class="btn btn-ghost" id="cartBackBtn" hidden>← Voltar</button>
+        <button class="btn btn-primary" id="cartNextBtn">Continuar →</button>
+      </div>
+      <div class="cart-confirm-overlay" id="cartConfirmOverlay" hidden aria-live="polite">
+        <div class="confirm-header">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <h3>Tudo certo?</h3>
+          <p>Confira os dados antes de enviar</p>
+        </div>
+        <div class="confirm-summary" id="confirmSummary"></div>
+        <div class="confirm-actions">
+          <button class="btn btn-ghost" id="confirmBackBtn">← Revisar</button>
+          <button class="btn btn-primary btn-wpp" id="confirmSendBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+            Enviar pelo WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARRINHO FLUTUANTE -->
+  <div class="cart-pill" id="floatingCart">
+    <div class="cart-pill-info">
+      <div class="cart-badge" id="cartCount">0</div>
+      <div class="cart-texts">
+        <span class="cart-title">Ver Carrinho</span>
+        <strong class="cart-total" id="cartTotalDisplay">R$ 0,00</strong>
+      </div>
+    </div>
+    <button class="btn btn-white" id="openCartBtn">Avançar ➔</button>
+  </div>
+
+  <!-- TOAST DE ITEM ADICIONADO (criado dinamicamente) -->
+
+  <script src="data/site.js" defer></script>
+  <script src="data/menu.js" defer></script>
+  <script src="data/menu-groups.js" defer></script>
+  <script src="scripts/main.js" defer></script>
+  <script src="data/firestore.js" defer></script>
+</body>
+</html>

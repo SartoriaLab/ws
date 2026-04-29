@@ -245,7 +245,7 @@
     var html = '';
     posts.slice(0, 9).forEach(function (p) {
       var url = p.postUrl || 'https://www.instagram.com/wilsonpizzastq/';
-      var img = p.imageUrl || '';
+      var img = p.image || p.imageUrl || '';
       var alt = String(p.alt || 'Post do Instagram').replace(/"/g, '&quot;');
       html += '<a class="ig-item" href="' + url + '" target="_blank" rel="noopener">';
       html += '<img src="' + img + '" alt="' + alt + '" loading="lazy" onerror="this.parentElement.style.display=\'none\'">';

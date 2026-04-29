@@ -1409,6 +1409,7 @@
   // Render do feed do Instagram (alimentado pelo cardapio-admin via Firestore)
   window.renderInstagramGrid = function(posts) {
     var grid = document.getElementById('instagramGrid');
+    var section = document.getElementById('instagram');
     if (!grid || !Array.isArray(posts) || !posts.length) return;
     var html = '';
     posts.slice(0, 9).forEach(function(post) {
@@ -1416,11 +1417,12 @@
       var url = post.postUrl || '#';
       var alt = (post.alt || 'Post @wilsonpizzastq').replace(/"/g, '&quot;');
       if (!img) return;
-      html += '<a href="' + url + '" target="_blank" rel="noopener" aria-label="Abrir post no Instagram">';
+      html += '<a class="ig-item" href="' + url + '" target="_blank" rel="noopener" aria-label="Abrir post no Instagram">';
       html += '<img src="' + img + '" alt="' + alt + '" loading="lazy">';
       html += '</a>';
     });
     grid.innerHTML = html;
+    if (section && html) section.hidden = false;
   };
 
   // Aplicar businessInfo local como fallback

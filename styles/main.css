@@ -1121,3 +1121,91 @@ h1 .text-yellow { background: linear-gradient(135deg, var(--gold) 0%, var(--yell
   .sc-name { font-size: 1.25rem; transform: none; }
   .sc-cta { opacity: 1; transform: none; }
 }
+
+/* ===========================
+   INSTAGRAM
+   =========================== */
+.ig-section {
+  padding: 80px 0;
+  background: var(--bg-body);
+}
+.ig-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.ig-handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-gray);
+  text-decoration: none;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  transition: color 0.18s, border-color 0.18s;
+}
+.ig-handle:hover { color: var(--primary); border-color: var(--primary); }
+.ig-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.ig-item {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: block;
+  position: relative;
+  background: var(--border-color);
+}
+.ig-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+.ig-item:hover img { transform: scale(1.05); }
+.ig-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(14,14,14,0.55);
+  opacity: 0;
+  transition: opacity 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+}
+.ig-item:hover .ig-item-overlay { opacity: 1; }
+.ig-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.ig-cta-row {
+  text-align: center;
+  margin-top: 28px;
+}
+
+@media (max-width: 768px) {
+  .ig-section { padding: 60px 0; }
+  .ig-grid { gap: 6px; }
+}
+@media (max-width: 480px) {
+  .ig-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+  .ig-item-overlay { display: none; }
+}
+}

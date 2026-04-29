@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Sincronizando Instagram — Wilson's Pizzaria</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8fafc; color: #0f172a; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+    .card { background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 32px 28px; max-width: 520px; width: 100%; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+    h1 { font-size: 20px; font-weight: 700; margin-bottom: 6px; color: #0f172a; }
+    .subtitle { font-size: 13px; color: #64748b; margin-bottom: 24px; }
+    .spinner { width: 40px; height: 40px; border: 3px solid #e2e8f0; border-top-color: #B0140C; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 20px auto; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .status { text-align: center; font-size: 14px; color: #475569; margin: 8px 0; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 20px 0; }
+    .grid img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px; background: #f1f5f9; }
+    .success { background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; padding: 12px 16px; border-radius: 10px; font-size: 14px; font-weight: 600; margin-bottom: 16px; }
+    .error { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; padding: 12px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 16px; word-break: break-word; }
+    .error-title { font-weight: 700; margin-bottom: 4px; }
+    .btn { display: inline-block; padding: 11px 20px; border-radius: 10px; font-size: 14px; font-weight: 700; text-decoration: none; cursor: pointer; border: none; font-family: inherit; }
+    .btn-primary { background: #B0140C; color: white; }
+    .btn-secondary { background: white; color: #334155; border: 1px solid #cbd5e1; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+    .muted { font-size: 12px; color: #94a3b8; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Sincronizando Instagram</h1>
+    <p class="subtitle">Wilson's Pizzaria Taquaritinga</p>
+    <div id="content"></div>
+  </div>
+
+  <script>
+  (function(){
+    var WORKER_URL = 'https://clientes-sync.julianodev.workers.dev';
+    var INSTAGRAM_URL = 'https://www.instagram.com/wilsonpizzastq/';
+    var SITE_URL = 'https://sartorialab.github.io/ws/';
+    var content = document.getElementById('content');
+
+    function esc(s) {
+      return String(s).replace(/[&<>"']/g, function(c) {
+        return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c];
+      });
+    }
+
+    function showInstructions() {
+      content.innerHTML = '<div class="error"><div class="error-title">Abra esta página pelo bookmarklet</div>Esta página só funciona quando chamada pelo bookmarklet "📸 Sincronizar Instagram" da página admin.</div>';
+    }
+    function showLoading(count) {
+      content.innerHTML = '<div class="spinner"></div><p class="status">Enviando ' + count + ' posts pro servidor…</p><p class="muted" style="text-align:center">Isso leva uns 5 segundos. Não feche a aba.</p>';
+    }
+    function showSuccess(count, posts) {
+      var gridHtml = posts.slice(0, 9).map(function(p) {
+        return '<img src="' + esc(p.imageUrl) + '" alt="' + esc(p.alt || '') + '" onerror="this.style.opacity=0.2">';
+      }).join('');
+      content.innerHTML =
+        '<div class="success">✓ ' + count + ' posts sincronizados com sucesso.</div>' +
+        '<div class="grid">' + gridHtml + '</div>' +
+        '<div class="actions">' +
+          '<a class="btn btn-primary" href="' + INSTAGRAM_URL + '">Voltar pro Instagram</a>' +
+          '<a class="btn btn-secondary" href="' + SITE_URL + '">Ver site</a>' +
+        '</div>' +
+        '<p class="muted">As fotos já estão publicadas no site. Pode levar até 1 minuto pro cache do navegador atualizar.</p>';
+    }
+    function showError(msg) {
+      content.innerHTML = '<div class="error"><div class="error-title">Falha na sincronização</div>' + esc(msg) + '</div><div class="actions"><a class="btn btn-primary" href="' + INSTAGRAM_URL + '">Tentar de novo no Instagram</a></div>';
+    }
+
+    async function run() {
+      var hash = location.hash.slice(1);
+      if (!hash) { showInstructions(); return; }
+      var payload;
+      try { payload = JSON.parse(decodeURIComponent(hash)); }
+      catch (e) { showError('Payload inválido: ' + e.message); return; }
+      if (payload.kind !== 'instagram' || !Array.isArray(payload.posts) || !payload.posts.length) {
+        showError('Payload sem posts ou tipo errado.'); return;
+      }
+      try { history.replaceState(null, '', location.pathname); } catch(e) {}
+      showLoading(payload.posts.length);
+      try {
+        var res = await fetch(WORKER_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload) });
+        var data = await res.json();
+        if (data.ok) showSuccess(data.stats.count, payload.posts);
+        else showError(data.error || 'Servidor retornou erro (HTTP ' + res.status + ').');
+      } catch (e) { showError('Erro de rede: ' + (e && e.message || e)); }
+    }
+    run();
+  })();
+  </script>
+</body>
+</html>

@@ -231,6 +231,31 @@
     if (gruposCache.length) renderAll();
   };
 
+  // === Instagram grid ===
+  window.renderInstagramGrid = function (posts) {
+    var grid = document.getElementById('instagramGrid');
+    var empty = document.getElementById('instagramEmpty');
+    var section = document.getElementById('instagram');
+    if (!grid) return;
+    if (!posts || !posts.length) {
+      if (empty) empty.hidden = false;
+      return;
+    }
+    if (section) section.hidden = false;
+    var html = '';
+    posts.slice(0, 9).forEach(function (p) {
+      var url = p.postUrl || 'https://www.instagram.com/wilsonpizzastq/';
+      var img = p.imageUrl || '';
+      var alt = String(p.alt || 'Post do Instagram').replace(/"/g, '&quot;');
+      html += '<a class="ig-item" href="' + url + '" target="_blank" rel="noopener">';
+      html += '<img src="' + img + '" alt="' + alt + '" loading="lazy" onerror="this.parentElement.style.display=\'none\'">';
+      html += '<span class="ig-item-overlay">&#10548;</span>';
+      html += '</a>';
+    });
+    grid.innerHTML = html;
+    if (empty) empty.hidden = true;
+  };
+
   // === Hook businessInfo (placeholder — site ja tem dados hardcoded; pode ser usado pra override) ===
   window.aplicarBusinessInfo = function (info) {
     if (!info) return;
